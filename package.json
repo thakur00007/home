@@ -1,5 +1,5 @@
 {
-  "name": "vac22-fullstacj-service",
+  "name": "vac22-fullstack-service",
   "version": "1.0.0",
   "description": "vac22-fullstack-service node js api creation project",
   "main": "server.js",
