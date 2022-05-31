@@ -1,1 +1,0 @@
-VAC22 Project with Angular 12 + Node JS API + MySQL
