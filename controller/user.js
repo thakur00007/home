@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const util  = require('../helper/util');
 const router = express.Router();
 
-// User invitation API
+// User registration API
 router.post("/register", async (req, res, next) => {
     let user = new User();
     let obj = {
@@ -55,5 +55,8 @@ router.post("/register", async (req, res, next) => {
         });
     }
 });
+
+
+// User Login API
 
 module.exports = router;
