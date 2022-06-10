@@ -1,0 +1,4 @@
+.app-header a.btn-link.active .line-bar {
+  bottom: -12px;
+  height: 6px;
+}

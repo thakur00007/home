@@ -1,0 +1,6 @@
+<ng-container>
+  <app-auth-header></app-auth-header>
+  <div class="content-wrapper mt-5 container-fluid">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+</ng-container>

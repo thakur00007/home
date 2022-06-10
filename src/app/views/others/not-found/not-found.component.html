@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-around container">
+  <div class="my-auto">
+    <img [src]="'assets/images/not-found.gif'" alt="not-found" width="180" />
+    <h3 class="font-weight-bold my-3">Oops! Page not found</h3>
+    <h4 class="my-auto high-z-index">
+      The page you are looking for either doesn't exist or removed recently. Contact site administrator if the problem
+      still persists.
+    </h4>
+    <a [routerLink]="'/auth/login'" class="btn-theme-primary d-inline-flex mt-4 btn">
+      <i class="fas fa-arrow-left my-auto mr-2"></i>Return to Home
+    </a>
+  </div>
+</div>
