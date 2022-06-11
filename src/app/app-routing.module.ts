@@ -1,18 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BlankLayoutComponent } from './shared/layouts/blank-layout/blank-layout.component';
-import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component';
+import { LayoutComponent } from './shared/layout/layout.component';
 import { AuthModule } from './views/auth/auth.module';
 import { OthersModule } from './views/others/others.module';
-import { AuthGuard } from './shared/services/auth/auth.guard';
-import { SolutionModule } from './views/solution/solution.module';
 
-const authRoutes: Routes = [
-  {
-    path: 'solution',
-    loadChildren: () => SolutionModule
-  }
-];
+const authRoutes: Routes = [];
 
 const routes: Routes = [
   {
@@ -22,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: BlankLayoutComponent,
+    component: LayoutComponent,
     children: [
       {
         path: 'auth',
@@ -32,19 +24,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: BlankLayoutComponent,
+    component: LayoutComponent,
     children: [
       {
         path: 'others',
         loadChildren: () => OthersModule
       }
     ]
-  },
-  {
-    path: '',
-    component: AuthLayoutComponent,
-    canActivate: [AuthGuard],
-    children: authRoutes
   },
   {
     path: '**',
