@@ -13,7 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": ["lodash", "apexcharts"],
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "apexcharts"
+            ],
             "outputPath": "dist/dummy-sample",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -188,19 +191,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -212,8 +202,21 @@
               "devServerTarget": "dummy-sample:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
-    }},
-  "defaultProject": "dummy-sample"
+    }
+  },
+  "defaultProject": "dummy-sample",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
