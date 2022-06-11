@@ -4,23 +4,23 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { AuthModule } from './views/auth/auth.module';
 import { OthersModule } from './views/others/others.module';
 
-const authRoutes: Routes = [];
+// const authRoutes: Routes = [];
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/login',
-    pathMatch: 'full'
+    redirectTo: 'welcome',
+    pathMatch: 'full',
   },
   {
     path: '',
     component: LayoutComponent,
     children: [
       {
-        path: 'auth',
-        loadChildren: () => AuthModule
-      }
-    ]
+        path: 'welcome',
+        loadChildren: () => AuthModule,
+      },
+    ],
   },
   {
     path: '',
@@ -28,18 +28,18 @@ const routes: Routes = [
     children: [
       {
         path: 'others',
-        loadChildren: () => OthersModule
-      }
-    ]
+        loadChildren: () => OthersModule,
+      },
+    ],
   },
   {
     path: '**',
-    redirectTo: 'others/404'
-  }
+    redirectTo: 'others/404',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
