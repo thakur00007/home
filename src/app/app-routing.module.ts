@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AuthModule } from './views/auth/auth.module';
 import { OthersModule } from './views/others/others.module';
-
+import { FrontModule } from './views/front/front.module';
 // const authRoutes: Routes = [];
 
 const routes: Routes = [
@@ -19,6 +19,16 @@ const routes: Routes = [
       {
         path: 'welcome',
         loadChildren: () => AuthModule,
+      },
+    ],
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'front',
+        loadChildren: () => FrontModule,
       },
     ],
   },
